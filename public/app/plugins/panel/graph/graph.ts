@@ -709,7 +709,15 @@ class GraphElement {
       min: this.parseNumber(this.panel.yaxes[0].min),
       max: this.parseNumber(this.panel.yaxes[0].max),
       tickDecimals: this.panel.yaxes[0].decimals,
+      ticks: null as {},
     };
+    if (this.panel.yaxes[0].ticks) {
+      try {
+        defaults.ticks = JSON.parse(this.panel.yaxes[0].ticks);
+      } catch (err) {
+        defaults.ticks = null;
+      }
+    }
 
     options.yaxes.push(defaults);
 
@@ -722,6 +730,16 @@ class GraphElement {
       secondY.min = this.parseNumber(this.panel.yaxes[1].min);
       secondY.max = this.parseNumber(this.panel.yaxes[1].max);
       secondY.tickDecimals = this.panel.yaxes[1].decimals;
+      if (this.panel.yaxes[1].ticks) {
+        try {
+          secondY.ticks = JSON.parse(this.panel.yaxes[1].ticks);
+        } catch (err) {
+          secondY.ticks = null;
+        }
+      } else {
+        secondY.ticks = null;
+      }
+
       options.yaxes.push(secondY);
 
       this.applyLogScale(options.yaxes[1], data);
