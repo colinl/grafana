@@ -776,13 +776,13 @@ class GraphElement {
       min: this.parseNumber(this.panel.yaxes[0].min),
       max: this.parseNumber(this.panel.yaxes[0].max),
       tickDecimals: this.panel.yaxes[0].decimals,
-      ticks: null as {},
+      ticks: (null as unknown) as {},
     };
     if (this.panel.yaxes[0].ticks) {
       try {
         defaults.ticks = JSON.parse(this.panel.yaxes[0].ticks);
       } catch (err) {
-        defaults.ticks = null;
+        defaults.ticks = (null as unknown) as {};
       }
     }
 
@@ -801,10 +801,10 @@ class GraphElement {
         try {
           secondY.ticks = JSON.parse(this.panel.yaxes[1].ticks);
         } catch (err) {
-          secondY.ticks = null;
+          secondY.ticks = (null as unknown) as {};
         }
       } else {
-        secondY.ticks = null;
+        secondY.ticks = (null as unknown) as {};
       }
 
       options.yaxes.push(secondY);
