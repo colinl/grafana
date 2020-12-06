@@ -1,6 +1,10 @@
 import { TimeOption } from '@grafana/data';
 
 export const quickOptions: TimeOption[] = [
+  { from: 'now/d', to: 'now/d', display: 'Today', section: 3 },
+  { from: 'now-1d/d', to: 'now-1d/d', display: 'Yesterday', section: 3 },
+  { from: 'now-2d/d', to: 'now-2d/d', display: 'Day before yesterday', section: 3 },
+  { from: 'now+1d/d', to: 'now+1d/d', display: 'Tomorrow', section: 3 },
   { from: 'now-5m', to: 'now', display: 'Last 5 minutes', section: 3 },
   { from: 'now-15m', to: 'now', display: 'Last 15 minutes', section: 3 },
   { from: 'now-30m', to: 'now', display: 'Last 30 minutes', section: 3 },

@@ -177,7 +177,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = (p
             {!hideQuickRanges && (
               <>
                 <TimeRangeList
-                  title="Relative time ranges"
+                  title="Quick options"
                   options={quickOptions}
                   onSelect={onChange}
                   value={value}
