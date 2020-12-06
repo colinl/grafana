@@ -161,7 +161,7 @@ export const TimePickerContentWithScreenSize: React.FC<PropsWithScreenSize> = pr
         <CustomScrollbar className={styles.rightSide}>
           <NarrowScreenForm {...props} visible={!isFullscreen} historyOptions={historyOptions} />
           <TimeRangeList
-            title="Relative time ranges"
+            title="Quick options"
             options={quickOptions}
             onSelect={props.onChange}
             value={props.value}
